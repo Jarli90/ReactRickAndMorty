@@ -1,0 +1,51 @@
+.article{
+    display: grid;
+    
+    margin: auto;
+    width: 90%;
+    height: 100%;
+    color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+    background-color: darkcyan;
+    padding: 10px;
+    
+}
+.article .dataList{
+    grid-column: 1;
+    grid-row: 1;
+    text-align: center;
+    
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+.dataList ul{
+    list-style: none;
+    padding: 0
+}
+.dataList li{
+    padding-left: 0px;
+}
+.article h1{
+    display: block;
+    margin: auto;
+    font-size: xx-large;
+    width: 90%;
+    text-align: center;
+}
+.article .image{
+    display: block;
+    grid-column: 2;
+    grid-row: 1;
+    margin: auto;
+    border-radius: 10px;
+}
+.image img{
+    border: solid 3px teal;
+    border-radius: 10px;
+}
+.article button{
+    grid-column: 1 / span 2;
+    grid-row: 2;
+}
