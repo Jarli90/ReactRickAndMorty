@@ -2,20 +2,37 @@
 .cardsWindow{
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    /* grid-template-columns: repeat(4, 1fr); */
     padding: 20px;
     margin: auto;
 }
+@media only screen and (min-width: 300px){
+    .cardsWindow{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and  (min-width: 500){
+    .cardsWindow{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media only screen and (min-width: 800px){
+    .cardsWindow{
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
 .searchBar{
-    padding: 10px;
+    padding: 10px; 
 }
 .searchBar input{
     display: block;
     width: 80%;
     margin: auto;
-    padding: 20px;
     border: solid 1px black;
     border-radius: 10px;
-    margin-bottom: 10px;
-    padding-top: 10px;
+    height: 30px;
+    line-height: 30px;
+    padding: 5px;
+    padding-left: 10px;
 }

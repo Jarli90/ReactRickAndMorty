@@ -3,11 +3,12 @@
     margin: 10px;
     padding-top: 0px;
     border: solid 1px black;
-    border-radius: 15px;
+    border-radius: 2vw;
     transition-duration: 0.1s;
     transition-timing-function: linear;
     transition-property: transform background-color;
     background-color: rgb(235, 235, 235);
+    overflow: hidden;
 }
 .card:hover{
     background-color: lightskyblue;
@@ -15,6 +16,9 @@
 }
 .card:hover .image{
     background-color: darkcyan;
+}
+.card .link{
+    color: black;
 }
 .image img{
     display: block;
@@ -25,9 +29,10 @@
     height: 60%;
 }
 .image{
-    border-radius: 13px 13px 0px 0px;
+    /* border-radius: 13px 13px 0px 0px; */
     background-color: teal;
-    padding: 10px
+    padding: 10px;
+    
 }
 
 .name{

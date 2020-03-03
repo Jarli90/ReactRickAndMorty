@@ -1,3 +1,6 @@
+
+import Character from "./character.js"
+
 class Fetcher {
 
     constructor(){
@@ -24,18 +27,18 @@ class Fetcher {
      */
     fetchCharacters(cb){
         fetch(this.nextPageUrl)
-            .then((response) => response.json())
-            .then((data) => {
+            .then(response => response.json())
+            .then(data => {
                 this.characters = this.characters.concat(data.results);
                 this.nextPageUrl = data.info.next;
-                cb(this.characters);
+                cb(this.characters.map((character) => new Character(character)));
 
                 if(this.nextPageUrl)
                     this.fetchCharacters(cb);
                 else
                     this._reset();
             })
-            .catch((err) => console.log(err));
+            .catch(err => console.log(err));
     }
 
 }

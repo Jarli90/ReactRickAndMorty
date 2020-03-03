@@ -1,0 +1,10 @@
+.dataList{
+    text-align: center;
+}
+.dataList ul{
+    list-style: none;
+    padding: 0;
+}
+.dataList li{
+    padding-left: 0px;
+}

@@ -1,0 +1,32 @@
+.episodes{
+    grid-column: 1 / span 2;
+    grid-row: 3;
+}
+.episodes p{
+    margin: 0px;
+}
+.episodes tbody{
+    background-color: white;
+    border-radius: 20px;;
+    color:black;
+    text-align: center;
+}
+.episodes h3{
+    text-align: center;
+}
+.episodes section{
+    border: solid 2px teal;
+    border-radius: 10px;
+}
+.episodes table{
+    overflow: hidden;
+    border-collapse: collapse;
+    border: solid 0px teal;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+}
+.episodes tr{
+    border-radius: 20px;;
+}
+   

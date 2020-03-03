@@ -1,5 +1,4 @@
 import React from "react";
-// import {useHistory} from "react-router-dom";
 import styles from "./App.module.css";
 import Logo from "./assets/RickAndMortyLogo.png"
 import {
@@ -23,9 +22,9 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/profile" component={ProfileView}>
+          <Route exact path="/" component={MainView}>
           </Route>
-          <Route path="/" component={MainView}>
+          <Route path="/profile" component={ProfileView}>
           </Route>
         </Switch>
       </div>

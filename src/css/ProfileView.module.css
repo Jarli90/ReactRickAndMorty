@@ -1,6 +1,5 @@
 .article{
     display: grid;
-    
     margin: auto;
     width: 90%;
     height: 100%;
@@ -9,23 +8,14 @@
     border-radius: 10px;
     background-color: darkcyan;
     padding: 10px;
-    
 }
 .article .dataList{
     grid-column: 1;
     grid-row: 1;
-    text-align: center;
     
     width: 80%;
     height: 100%;
     margin: auto;
-}
-.dataList ul{
-    list-style: none;
-    padding: 0
-}
-.dataList li{
-    padding-left: 0px;
 }
 .article h1{
     display: block;
@@ -48,4 +38,17 @@
 .article button{
     grid-column: 1 / span 2;
     grid-row: 2;
+    width: 40%;
+    margin:auto;
+    background-color: white;
+    border: inset 1px white;
+    border-radius: 10px;
+    
+}
+.link{
+    color:black;
+}
+.article button:hover{
+    background-color: lightgray;
+    border: inset 1px lightgray;
 }

@@ -1,45 +1,54 @@
 import React from 'react';
 
-import ProfileCard from "../components/ProfileCard";
+import ProfileCard from "../components/ProfileCard.js";
 import styles from "../css/MainView.module.css";
-import fetcher from "../helpers/characterFetcher.js"
+import fetcher from "../js/characterFetcher.js"
 
-
-class MainView extends React.Component{
-    constructor(){
+class MainView extends React.Component {
+    constructor() {
         super();
-        this.fullList =  [];
+        this.fullList = [];
+        this.fetchCharacters();
+    }
+    fetchCharacters() {
         fetcher.fetchCharacters(
-            (characters) => 
-            {
-                this.fullList = characters;
-                this.setState({characters: characters});
+            (characters) => {
+                // If a character response returns while in profile view the character array will not update
+                if (this._mounted) {
+                    this.fullList = characters;
+                    this.setState({ characters: characters });
+                }
             });
-        
     }
     state = {
-        characters:[]
+        characters: []
     }
-
-    search(event){
-        let inputText = event.target.value;
-
+    componentDidMount() {
+        this._mounted = true;
+    }
+    componentWillUnmount() {
+        this._mounted = false;
+    }
+    search(inputText) {
         this.setState(
-            { characters: inputText?    
-                this.fullList.filter((character) => character.name.toLowerCase().includes(inputText.toLowerCase())):
-                this.fullList
+            {
+                characters: inputText ?
+                    this.fullList.filter((character) => character.name.toLowerCase().includes(inputText.toLowerCase())) :
+                    this.fullList
             });
     }
 
-    render(){
-        return  <article>
-                    <section className={styles.searchBar}>
-                        <input onKeyUp={(e) => this.search(e)} type="text"></input>
-                    </section>
-                    <section className={styles.cardsWindow}>
-                        {this.state.characters.map((character) => <ProfileCard character={character} key={character.id}></ProfileCard>)}
-                    </section>
-                </article>
+    render() {
+        return <article>
+            <section className={styles.searchBar}>
+                <input onKeyUp={(e) => this.search(e.target.value)} type="text"></input>
+            </section>
+            <section className={styles.cardsWindow}>
+                {this.state.characters.map(
+                    (character) =>
+                        <ProfileCard character={character} key={character.id}></ProfileCard>)}
+            </section>
+        </article>
     }
 }
 
