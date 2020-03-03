@@ -35,8 +35,10 @@ class Fetcher {
 
                 if(this.nextPageUrl)
                     this.fetchCharacters(cb);
-                else
+                else{
                     this._reset();
+                }
+                    
             })
             .catch(err => console.log(err));
     }

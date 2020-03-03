@@ -35,18 +35,22 @@
     border: solid 3px teal;
     border-radius: 10px;
 }
-.article button{
-    grid-column: 1 / span 2;
-    grid-row: 2;
-    width: 40%;
+.link button{
+    display: block;
     margin:auto;
     background-color: white;
     border: inset 1px white;
     border-radius: 10px;
+    width: 100%;
     
 }
 .link{
+    display: block;
     color:black;
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    width: 40%;
+    margin:auto;
 }
 .article button:hover{
     background-color: lightgray;

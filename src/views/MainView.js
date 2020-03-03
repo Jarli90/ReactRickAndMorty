@@ -41,7 +41,8 @@ class MainView extends React.Component {
     render() {
         return <article>
             <section className={styles.searchBar}>
-                <input onKeyUp={(e) => this.search(e.target.value)} type="text"></input>
+                <input  onKeyUp={(e) => this.search(e.target.value)} type="text">
+                </input>
             </section>
             <section className={styles.cardsWindow}>
                 {this.state.characters.map(
